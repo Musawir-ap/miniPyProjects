@@ -1,15 +1,15 @@
 import copy
 
-group_lines = ['295743861', '431865927', '876192543', '387459216', '612387495', '549216738', '763524189', '928671354', '154938672']
-box = [[int(char) for char in row] for row in group_lines]
-# print(group_lines)
-# box = [[row[i:i+3] for i in range(0, 9, 3)] for row in group_lines]
-# box = [box[i:i+3] for i in range(0, 9, 3)]
-  
-# for i in range(len(box)):
-#     for j in range(len(box[i])):
-#         print(box[i][j])
-# print(box)
+lines_box = []
+print('enter lines.....')
+while True:
+    g_lines = [input()]
+    if not any(g_lines):  # If any line in the group is empty, exit the loop
+        break
+    lines_box.extend(g_lines)
+
+# group_lines = ['295743861', '431865927', '876192543', '387459216', '612387495', '549216738', '763524189', '928671354', '154938672']
+box = [[int(char) for char in row] for row in lines_box]
 
 def check(box):
     # check each line
@@ -60,6 +60,11 @@ def check(box):
             box_flag = True
             # print('box Ok')
             temp.clear()
+            
+    if row_flag and col_flag and box_flag:
+        print('sudoku is Valid')
+    else:
+        print('invalid')
             
         
 check(box)
