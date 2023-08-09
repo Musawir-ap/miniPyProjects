@@ -16,7 +16,7 @@ class Weeker:
         return self.day
 
     def add_days(self, n):
-        self.day_index = (self.day_index + n) % 7
+        self.day_index = (self.day_index + n) % 7 
         self.day = self.days[self.day_index]
 
     def subtract_days(self, n):

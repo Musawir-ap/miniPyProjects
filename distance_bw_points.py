@@ -16,8 +16,26 @@ class Point:
 
     def distance_from_point(self, point):
         return self.distance_from_xy(point.getx(), point.gety())
+    
 
-point1 = Point(0, 0)
-point2 = Point(1, 1)
-print(point1.distance_from_point(point2))
-print(point2.distance_from_xy(2, 0))
+# point1 = Point(0, 0)
+# point2 = Point(1, 1)
+# print(point1.distance_from_point(point2))
+# print(point2.distance_from_xy(2, 0))
+
+class Triangle:
+    def __init__(self, vertice1, vertice2, vertice3):
+        self.__vertice1 = vertice1
+        self.__vertice2 = vertice2
+        self.__vertice3 = vertice3
+
+    def perimeter(self):
+        e_1 = self.__vertice1.distance_from_point(self.__vertice2)
+        e_2 = self.__vertice1.distance_from_point(self.__vertice3)
+        e_3 = self.__vertice2.distance_from_point(self.__vertice3)
+        return e_1 + e_2 + e_3
+        
+
+
+triangle = Triangle(Point(0, 0), Point(1, 0), Point(0, 1))
+print(triangle.perimeter())
